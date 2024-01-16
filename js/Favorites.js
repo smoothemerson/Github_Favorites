@@ -63,15 +63,24 @@ export class FavoritesView extends Favorites {
 
   onadd() {
     const addButton = this.root.querySelector(".search button");
+    const inputElement = this.root.querySelector(".search input");
+  
     addButton.onclick = () => {
-      const { value } = this.root.querySelector(".search input");
-
-      this.add(value);
+      this.add(inputElement.value);
     };
+  
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" && inputElement.value.length >= 1) {
+        this.add(inputElement.value);
+      }
+    });
   }
+  
 
   update() {
     this.removeAllTr();
+    const inputElement = this.root.querySelector(".search input");
+    inputElement.value = ""
 
     this.entries.forEach((user) => {
       const row = this.createRow();
