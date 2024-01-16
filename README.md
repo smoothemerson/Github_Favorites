@@ -13,7 +13,7 @@
 <br>
 
 <p align="center">
-  <img alt="SPA Universe" src="./github/preview.png width="100%">
+  <img alt="Github Favorites" src="./github/preview.png" width="100%">
 </p>
 
 ## 🚀 Technologies
